@@ -1,0 +1,21 @@
+{
+  "name": "lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "a1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node a1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sithuhtut2022/web_programming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sithuhtut2022/web_programming/issues"
+  },
+  "homepage": "https://github.com/sithuhtut2022/web_programming#readme"
+}
