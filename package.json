@@ -2,17 +2,17 @@
   "name": "lab",
   "version": "1.0.0",
   "description": "",
-  "main": "a1.js",
+  "main": "a2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node a1.js"
+    "start": "node a2.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sithuhtut2022/web_programming.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Si Thu Htut",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sithuhtut2022/web_programming/issues"
