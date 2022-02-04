@@ -1,0 +1,18 @@
+{
+  "name": "web_programming",
+  "version": "1.0.0",
+  "description": "web programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node test.js"
+  },
+  "keywords": [
+    "nodejs",
+    "js",
+    "javascript",
+    "express","http","server"
+  ],
+  "author": "Si Thu Htut",
+  "license": "ISC"
+}
