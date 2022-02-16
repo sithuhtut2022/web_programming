@@ -2,6 +2,8 @@ var HTTP_PORT = process.env.PORT || 8080;
 var express = require("express");
 var app = express();
 
+// set the  folder as static in order to access images files in html pages
+app.use(express.static(__dirname));
 const path = require('path');
 
 var collegeData_js=require('./modules/collegeData.js')
