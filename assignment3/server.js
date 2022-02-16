@@ -1,0 +1,141 @@
+var HTTP_PORT = process.env.PORT || 8080;
+var express = require("express");
+var app = express();
+
+const path = require('path');
+
+var collegeData_js=require('./modules/collegeData.js')
+
+// setup a 'route' to listen on the default url path
+app.get("/students", (req, res) => {
+    
+    // check for query string
+    if (!req.query.course){
+        let promiseA =collegeData_js.initialize()
+        let promiseB =promiseA.then(collegeData_js.getAllStudents)
+        let promiseC =promiseB.then(function (studentList){
+
+            res.setHeader('Content-Type', "application/json")
+            let myJsonString = JSON.stringify(studentList);
+            let user = JSON.parse(myJsonString.toString())
+            res.json(user)
+        
+        })
+        .catch(function(rejectMsg){
+            // catch any errors here
+            res.send(rejectMsg);
+        });
+    }
+    else{
+        let promiseA =collegeData_js.initialize()
+        .then(collegeData_js.getAllStudents) 
+        .then(function(data){
+            return collegeData_js.getStudentsByCourse(data, req.query.course)
+        })
+
+        .then(function (StudentListByCourse){
+            res.setHeader('Content-Type', "application/json")
+            let myJsonString = JSON.stringify(StudentListByCourse);
+            let user = JSON.parse(myJsonString.toString())
+            res.json(user)
+            
+            
+        }) 
+        .catch(function(rejectMsg){
+            // catch any errors here
+            res.send(rejectMsg);
+        });
+
+    }
+
+});
+
+app.get("/tas", (req, res) => {
+    
+        let promiseA =collegeData_js.initialize()
+        let promiseB =promiseA.then(collegeData_js.getAllStudents)
+        .then(collegeData_js.getTAs)
+        let promiseC =promiseB.then(function (studentList){
+
+            res.setHeader('Content-Type', "application/json")
+            let myJsonString = JSON.stringify(studentList);
+            let user = JSON.parse(myJsonString.toString())
+            res.json(user)
+        
+        })
+        .catch(function(rejectMsg){
+            // catch any errors here
+            res.send(rejectMsg);
+        });
+});
+
+app.get("/courses", (req, res) => {
+    
+    let promiseA =collegeData_js.initialize()
+   // let promiseB =promiseA.then(collegeData_js.getAllStudents)
+    .then(collegeData_js.getAllCourses)
+    .then(function (courseList){
+
+        res.setHeader('Content-Type', "application/json")
+        let myJsonString = JSON.stringify(courseList);
+        let user = JSON.parse(myJsonString.toString())
+        res.json(user)
+    
+    })
+    .catch(function(rejectMsg){
+        // catch any errors here
+        res.send(rejectMsg);
+    });
+});
+
+
+app.get("/students/:num", (req, res) => {
+    
+    let promiseA =collegeData_js.initialize()
+    let promiseB =promiseA.then(collegeData_js.getAllStudents)
+    .then(function(data){
+        return collegeData_js.getStudentByNum(data, req.params.num)
+    })
+    let promiseC =promiseB.then(function (studentList){
+
+        res.setHeader('Content-Type', "application/json")
+        let myJsonString = JSON.stringify(studentList);
+        let user = JSON.parse(myJsonString.toString())
+        res.json(user)
+    
+    })
+    .catch(function(rejectMsg){
+        // catch any errors here
+        res.send(rejectMsg);
+    });
+});
+
+// redirect home.html
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '/views/home.html'));
+  });
+
+// redirect about.html
+app.get('/about', function(req, res) {
+    res.sendFile(path.join(__dirname, '/views/about.html'));
+  });
+
+  
+// redirect htmlDemo.html
+app.get('/htmlDemo', function(req, res) {
+    res.sendFile(path.join(__dirname, '/views/htmlDemo.html'));
+  });
+
+  // Handling non matching request from the client
+app.use((req, res, next) => {
+    res.status(404).send(
+        `<h1>404- Page not found on the server.</h1>`)
+})
+
+// setup http server to listen on HTTP_PORT
+app.listen(HTTP_PORT, ()=>{console.log("server listening on port: " + HTTP_PORT)});
+
+
+
+
+
