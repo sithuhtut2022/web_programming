@@ -1,0 +1,176 @@
+<div class="row">
+      <main class="col-md-12">
+
+        <!-- Start your code here -->
+        <div class="container">
+
+          <form class="well form-horizontal" action="/students/add" method="POST" id="contact_form">
+            <fieldset>
+
+              <!-- Form Name -->
+              <legend>
+                <center>
+                  <h2><b>Add Student Form</b></h2>
+                </center>
+              </legend><br>
+
+              <!-- Text input-->
+              <h3 class="text-primary">Personal Information</h3>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-primary">First Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input name="firstName" placeholder="First Name" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-primary">Last Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input name="lastName" placeholder="Last Name" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label text-primary">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-primary">Address (Street)</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                    <input name="addressStreet" placeholder="Street" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-primary">Address (City)</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                    <input name="addressCity" placeholder="City" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-primary">Address (Province)</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                    <input name="addressProvince" placeholder="Province" class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="text-warning">Academic Information</h3>
+
+
+
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-warning">College Employment</label>
+
+                <div class="col-md-4 inputGroupContainer">
+
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="TA" name="TA">
+                    <label class="form-check-label text-warning" for="TA">Teaching Assistant</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-warning">Enrolledment Status</label>
+
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="status" value="Full Time"
+                      name="status" checked />
+                    <label class="form-check-label text-warning" for="status">Full Time</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="status" name="status"
+                      value="Par Time" />
+                    <label class="form-check-label text-warning" for="status">Part Time</label>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="col-md-4 control-label text-warning">Entrolled in Course</label>
+                <div class="col-md-4 selectContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                    <select name="course" class="form-control selectpicker">
+                              <option value="1">Relational Database Design and Implementation</option>
+                              <option value="2">Java Programming</option>
+                              <option value="3">Introduction to Cloud Computing</option>
+                              <option value="4">Database Administration and Management</option>
+                              <option value="5">Web Programming</option>
+                              <option value="6">Applied Capstone Project</option>
+                              <option value="7">Database Connectivity Using Java</option>
+                              <option value="8">Accessing Big Data</option>
+                              <option value="9">Datawarehousing</option>
+                              <option value="10">Security in Databases and Web Applications</option>
+                              <option value="11">Work Term Preparation (Work-Integrated Learning option only)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Button -->
+              <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit"
+                    class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAdd Student <span
+                      class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+    </div><!-- /.container -->
+    <!-- End your code here  -->
+
+
+
+    </main>
